@@ -1,2 +1,2 @@
 # Python
-Usefull Python scripts
+Useful Python scripts
