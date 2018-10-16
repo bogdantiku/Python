@@ -1,7 +1,7 @@
 import feedparser
 import random #Random module is imported
 
-d = feedparser.parse('http://hvg.hu/rss/vilag')
+d = feedparser.parse('http://hvg.hu/rss/tudomany')
 #for post in d.entries:
     #print(post.title + "\n")
 
@@ -13,7 +13,7 @@ for i in d.entries:
 
 print("------------------------------------")
 def returnTitle(titleNumber):
-    d = feedparser.parse('http://hvg.hu/rss/vilag')
+    d = feedparser.parse('http://hvg.hu/rss/tudomany')
     #for post in d.entries:
         #print(post.title + "\n")
 
@@ -28,11 +28,16 @@ def returnTitle(titleNumber):
 #print(returnTitle())
 
 #deck = 13
-deck = int(input("Enter text!")) #Entered text is split into separate words
-myTitle = returnTitle(deck)
+while 1 == 1: #The script will ask for input over and over
+ deck = int(input("Enter text!")) #Entered text is split into separate words
+ if deck == 0: #Exit by typing zero
+     break
+
+ myTitle = returnTitle(deck)
+
 
 #print("Original title:", deck, " is: ", myTitle)
 #print (returnTitle(13))
-splitTitle = myTitle.split()
-random.shuffle(splitTitle) #Separeted words are shuffled
-print("Mixed words: ",", ".join(splitTitle))
+ splitTitle = myTitle.split()
+ random.shuffle(splitTitle) #Separeted words are shuffled
+ print("Mixed words: ",", ".join(splitTitle))
